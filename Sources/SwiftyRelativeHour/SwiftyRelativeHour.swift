@@ -32,7 +32,7 @@ public class SwiftyRelativeHour {
         return getHour(date: date, start: yesterday["sunsetStart"]!, end: today["sunrise"]!)
     }
     
-    func getRelativeHour(date: Date) -> RelativeHour{
+    public func getRelativeHour(date: Date) -> RelativeHour{
         let timeClass = TimeClass(date: date, suntime: suntimes)
         
         switch timeClass{
