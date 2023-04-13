@@ -12,7 +12,7 @@ import CoreLocation
 public class RelativeHourLocal: ObservableObject {
     @Published var time: String = ""
     var location = LocationManager()
-    init() {
+    public init() {
         getRelativeHour()
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.getRelativeHour()
