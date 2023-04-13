@@ -3,9 +3,9 @@ import Foundation
 
 
 
-public struct SwiftyRelativeHour {
+public class SwiftyRelativeHour {
     let suntimes: Suntimes
-    init(latitude:Double,longitude:Double) {
+    public init(latitude:Double,longitude:Double) {
         suntimes = Suntimes(latitude: latitude, longitude: longitude)
     }
     
