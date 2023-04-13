@@ -7,10 +7,10 @@
 
 import Foundation
 public struct RelativeHour{
-    let hour: Int
-    let movement: Int
-    let instance: Int
-    let moment: Int
+    public let hour: Int
+    public let movement: Int
+    public let instance: Int
+    public let moment: Int
 }
 
 extension RelativeHour{
