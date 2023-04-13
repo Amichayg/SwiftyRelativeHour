@@ -10,7 +10,7 @@ import CoreLocation
 
 @available(macOS 10.15, *)
 public class RelativeHourLocal: ObservableObject {
-    @Published public var time: String = ""
+    @Published var time: String = ""
     var location = LocationManager()
     public init() {
         getRelativeHour()
