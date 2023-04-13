@@ -23,7 +23,7 @@ public struct Suntimes{
     
     func getSuntime(date: Date, dayDelta: Double = 0) -> Dictionary<String, Date>{
         let sunny=SwiftySuncalc()
-        let dayLength: Double = -60*60*24
+        let dayLength: Double = 60*60*24
         return sunny.getTimes(date: date.addingTimeInterval(dayLength * dayDelta), lat: self.latitude, lng: self.longitude)
     }
 }
