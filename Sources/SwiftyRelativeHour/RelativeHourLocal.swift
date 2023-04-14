@@ -11,6 +11,7 @@ import CoreLocation
 @available(macOS 10.15, *)
 public class RelativeHourLocal: ObservableObject {
     @Published public var time: String = ""
+    @Published public var relativeHour: RelativeHour = RelativeHour(hour: 0, movement: 0, instance: 0, moment: 0)
     var location = LocationManager()
     public init() {
         getRelativeHour()
@@ -23,7 +24,7 @@ public class RelativeHourLocal: ObservableObject {
         var userLongitude: Double  = location.lastLocation?.coordinate.longitude ?? 0
         print("\(userLatitude):\(userLongitude)")
         print(Date())
-        let relativeHour: RelativeHour = SwiftyRelativeHour(latitude: userLatitude, longitude: userLongitude).getRelativeHour(date: Date())
+        relativeHour = SwiftyRelativeHour(latitude: userLatitude, longitude: userLongitude).getRelativeHour(date: Date())
         time = "\(relativeHour.hour):\(relativeHour.movement):\(relativeHour.instance):\(relativeHour.moment)"
     }
 }
