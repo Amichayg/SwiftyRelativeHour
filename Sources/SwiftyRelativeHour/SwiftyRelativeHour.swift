@@ -58,3 +58,6 @@ public class SwiftyRelativeHour {
 }
 
 
+public func localSwiftyRelativeHour()->SwiftyRelativeHour{
+    return SwiftyRelativeHour()
+}
