@@ -14,6 +14,7 @@ public class SwiftyRelativeHour {
         let hour = date.timeIntervalSince(start) / length
         return hour
     }
+    
     private func getDayHour(date: Date) -> Double{
         let today = suntimes.getSuntime(date: date)
         return getHour(date: date, start: today["sunrise"]!, end: today["sunsetStart"]!)
