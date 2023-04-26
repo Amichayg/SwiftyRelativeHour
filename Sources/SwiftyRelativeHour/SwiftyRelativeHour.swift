@@ -55,9 +55,10 @@ public class SwiftyRelativeHour {
             return RelativeHour.fromHour(hour: getDayHour(date: date))
         }
     }
+    
+    public class func localSwiftyRelativeHour()->SwiftyRelativeHour{
+        return SwiftyRelativeHour()
+    }
 }
 
 
-public func localSwiftyRelativeHour()->SwiftyRelativeHour{
-    return SwiftyRelativeHour()
-}
