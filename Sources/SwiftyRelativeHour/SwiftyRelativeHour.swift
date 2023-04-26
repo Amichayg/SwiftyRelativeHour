@@ -8,7 +8,12 @@ public class SwiftyRelativeHour {
     public init(latitude:Double,longitude:Double) {
         suntimes = Suntimes(latitude: latitude, longitude: longitude)
     }
-    
+    public init(){
+        let locationManager = LocationManager()
+        var userLatitude: Double = locationManager.lastLocation?.coordinate.latitude ?? 0
+        var userLongitude: Double  = locationManager.lastLocation?.coordinate.longitude ?? 0
+        suntimes = Suntimes(latitude: userLatitude, longitude: userLongitude)
+    }
     private func getHour(date: Date, start: Date, end: Date) -> Double{
         let length = end.timeIntervalSince(start) / 12
         let hour = date.timeIntervalSince(start) / length
@@ -49,7 +54,5 @@ public class SwiftyRelativeHour {
         }
     }
 }
-
-
 
 
