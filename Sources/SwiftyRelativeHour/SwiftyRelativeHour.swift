@@ -5,16 +5,17 @@ import Foundation
 
 public class SwiftyRelativeHour {
     let suntimes: Suntimes
-    public init(latitude:Double,longitude:Double) {
-        suntimes = Suntimes(latitude: latitude, longitude: longitude)
-    }
-    
     public convenience init(){
         let locationManager = LocationManager()
         var userLatitude: Double = locationManager.lastLocation?.coordinate.latitude ?? 0
         var userLongitude: Double  = locationManager.lastLocation?.coordinate.longitude ?? 0
         self.init(latitude: userLatitude, longitude: userLongitude)
     }
+
+    public init(latitude:Double,longitude:Double) {
+        suntimes = Suntimes(latitude: latitude, longitude: longitude)
+    }
+    
     
     private func getHour(date: Date, start: Date, end: Date) -> Double{
         let length = end.timeIntervalSince(start) / 12
