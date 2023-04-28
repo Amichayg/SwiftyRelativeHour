@@ -27,7 +27,7 @@ let package = Package(
             name: "SwiftyRelativeHour",
             dependencies: []),
         .target(name: "TimelineRelativeHour",
-               dependencies: [])
+               dependencies: []),
         .testTarget(
             name: "SwiftyRelativeHourTests",
             dependencies: ["SwiftyRelativeHour"]),
