@@ -26,6 +26,22 @@ public struct Suntimes{
         let dayLength: Double = 60*60*24
         return sunny.getTimes(date: date.addingTimeInterval(dayLength * dayDelta), lat: self.latitude, lng: self.longitude)
     }
+    
+    func getStartEndForTime(date: Date, time: TimeClass) -> (Date, Date){
+        switch time{
+        case .Daytime:
+            let today = getSuntime(date: date)
+            return (start: today["sunrise"]!, end: today["sunsetStart"]!)
+        case .Nighttime:
+            let today = getSuntime(date: date)
+            let tomorrow = getSuntime(date: date, dayDelta: 1)
+            return (start: today["sunsetStart"]!, end: tomorrow["sunrise"]!)
+        case .Presunrise:
+            let today = getSuntime(date: date)
+            let yesterday = getSuntime(date: date, dayDelta: -1)
+            return (start: yesterday["sunsetStart"]!, end: today["sunrise"]!)
+        }
+    }
 }
 
 

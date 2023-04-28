@@ -7,7 +7,7 @@ let package = Package(
     name: "SwiftyRelativeHour",
     platforms: [
         .macCatalyst(.v15),
-        .macOS(.v12),
+        .macOS(.v13),
         .iOS(.v16)
         ],
     products: [
